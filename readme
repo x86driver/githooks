@@ -1,0 +1,2 @@
+This git repository will push into Dropbox
+So we need a hook to ensure the git directory is complete
