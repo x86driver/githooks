@@ -1,2 +1,7 @@
 This git repository will push into Dropbox
 So we need a hook to ensure the git directory is complete
+
+Usage:
+	cp post-update ~/Dropbox/git/something.git/hooks/post-update
+
+Whenever you run git push, it will check whether Dropbox is idle or sync.

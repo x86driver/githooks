@@ -1,0 +1,27 @@
+#!/usr/bin/perl -w
+
+use strict;
+
+sub check_dropbox
+{
+    my $status = `dropbox status`;
+    if ($status =~ "Idle") {
+	return 0;
+    } else {
+	return -1;
+    }
+}
+
+BEGIN
+{
+    print "\033[48;5;31mWaiting for Dropbox...\033[m\n";
+    while (check_dropbox != 0) {
+	sleep 1;
+    }
+
+#    if (check_dropbox() == 0) {
+#	print "dropbox ok!\n";
+#    } else {
+#	print "dropbox not idle!\n";
+#    }
+}
